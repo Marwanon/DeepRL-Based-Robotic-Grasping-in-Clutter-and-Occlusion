@@ -10,6 +10,20 @@ According to experimental simulation findings, the proposed approach achieved an
 ## Approach 
 ![Robotic Grasping](images/Approach.png)
 
+
+## Problem Definitions
+This work tackles a fundamental issue in robotic manipulation: grasping in cluttered scenarios. In well-organized shapes where objects are closely placed (Figure 2), there is no space for the gripper’s fingers to execute a grasp without first detaching the objects. Methods like DRGP [10], which rely solely on grasp actions, struggle in such situations. Synergizing non-prehensile actions (e.g., push, shift) with grasp actions can address challenges that sole-grasping policies cannot. Previous studies have combined push and grasp actions using the max Q-value strategy (e.g., [28], [8], [68]), training two neural networks to predict the best push and grasp Q-values. However, this approach faces issues:
+
+1. Ineffective pushes, moving the entire pile instead of the targeted object, requiring multiple pushes.
+![Robotic Grasping](images/Challenge_one_of_First_problem.png)
+
+2. Push actions are favored over grasp in heavy clutters, resulting in the pile being pushed out of the workspace. The robot may push when it should grasp and vice versa.
+![Robotic Grasping](images/Challenge_two_of_First_problem.png)
+
+The second challenge is occlusion avoidance. Grasping in cluttered scenarios with objects stacked on top of each other requires more than a single-perspective view. Multi-view approaches with a single movable camera [25] increase grasp success but suffer from visual data loss when the camera is obscured. Although multi-view setups have been used [60], they don’t address scenarios where one or both cameras are occluded. Using dual cameras for complementary multi-view grasping hasn't been fully explored. Figure 4 demonstrates the occlusion issue with one or both cameras being obstructed.
+![Robotic Grasping](images/Challenge_of_occlusion_scenarios.png)
+
+
 ## Setting and Installation
 This implementation has the following dependencies, which have been tested on Ubuntu 19.04.4 LTS:
 
@@ -98,11 +112,11 @@ To install PyTorch, run the following commands:
     python evaluate.py --session_directory 'logs/train' --method 'reinforcement' --num_obj_complete
 
 
+## Citing:
+If you found this project useful please cite the work: 
+Mohammed, M.Q.; Kwek, L.C.; Chua, S.C.; Aljaloud, A.S.; Al-Dhaqm, A.; Al-Mekhlafi, Z.G.; Mohammed, B.A. Deep Reinforcement Learning-Based Robotic Grasping in Clutter and Occlusion. Sustainability 2021, 13, 13686. https://doi.org/10.3390/su132413686
 
-
-
-
-
-
+## Note:
+This project is modified of the "https://github.com/andyzeng/visual-pushing-grasping/tree/master"
 
 
