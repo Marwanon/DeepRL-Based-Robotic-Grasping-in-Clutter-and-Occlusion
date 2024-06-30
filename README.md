@@ -8,7 +8,7 @@ In this paper, two significant challenges associated with robotic grasping in bo
 According to experimental simulation findings, the proposed approach achieved an average grasp success rate of 83.6%, 86.3%, and 97.8% in the cluttered, well-ordered object, and occlusion scenarios, respectively.
 
 ## Approach 
-![Robotic Grasping](images/AApproach.png.png)
+![Robotic Grasping](images/Approach.png)
 
 ## Setting and Installation
 This implementation has the following dependencies, which have been tested on Ubuntu 19.04.4 LTS:
