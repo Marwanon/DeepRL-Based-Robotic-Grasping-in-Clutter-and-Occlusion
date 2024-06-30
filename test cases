@@ -1,0 +1,61 @@
+Test Scenario
+############################Well-Order 1-2 two objects, 3-5 six objects################
+python main.py --is_sim --obj_mesh_dir 'objects/blocks' --num_obj 10 --grasp_rewards --experience_replay  --is_testing --test_preset_cases --test_preset_file 'simulation/test-cases/TCWO1' --load_snapshot --snapshot_file 'logs/train/models/snapshot-backup.reinforcement.pth'  --save_visualizations --push
+
+python main.py --is_sim --obj_mesh_dir 'objects/blocks' --num_obj 10 --grasp_rewards --experience_replay --is_testing --test_preset_cases --test_preset_file 'simulation/test-cases/TCWO2' --load_snapshot --snapshot_file 'logs/train/models/snapshot-backup.reinforcement.pth'  --save_visualizations --push
+
+python main.py --is_sim --obj_mesh_dir 'objects/blocks' --num_obj 30 --grasp_rewards --experience_replay  --is_testing --test_preset_cases --test_preset_file 'simulation/test-cases/TCWO3' --load_snapshot --snapshot_file 'logs/train/models/snapshot-backup.reinforcement.pth'  --save_visualizations --push
+
+python main.py --is_sim --obj_mesh_dir 'objects/blocks' --num_obj 30 --grasp_rewards --experience_replay  --is_testing --test_preset_cases --test_preset_file 'simulation/test-cases/TCWO4' --load_snapshot --snapshot_file 'logs/train/models/snapshot-backup.reinforcement.pth'  --save_visualizations --push
+
+python main.py --is_sim --obj_mesh_dir 'objects/blocks' --num_obj 30 --grasp_rewards --experience_replay  --is_testing --test_preset_cases --test_preset_file 'simulation/test-cases/TCWO5' --load_snapshot --snapshot_file 'logs/train/models/snapshot-backup.reinforcement.pth'  --save_visualizations --push
+
+python main.py --is_sim --obj_mesh_dir 'objects/blocks' --num_obj 10 --grasp_rewards --experience_replay  --is_testing --test_preset_cases --test_preset_file 'simulation/test-cases/TCWO51' --load_snapshot --snapshot_file 'logs/train/models/snapshot-backup.reinforcement.pth'  --save_visualizations --push
+
+python main.py --is_sim --obj_mesh_dir 'objects/blocks' --num_obj 10 --grasp_rewards --experience_replay  --is_testing --test_preset_cases --test_preset_file 'simulation/test-cases/TCWO6' --load_snapshot --snapshot_file 'logs/train/models/snapshot-backup.reinforcement.pth'  --save_visualizations --push
+
+#####################Random Order 1-2 two objects, 3-5 six objects############################
+python main.py --is_sim --obj_mesh_dir 'objects/blocks' --num_obj 20 --grasp_rewards --experience_replay  --is_testing --test_preset_cases --test_preset_file 'simulation/test-cases/TCRO1' --load_snapshot --snapshot_file 'logs/train/models/snapshot-backup.reinforcement.pth'  --save_visualizations --push
+
+python main.py --is_sim --obj_mesh_dir 'objects/blocks' --num_obj 30 --grasp_rewards --experience_replay --is_testing --test_preset_cases --test_preset_file 'simulation/test-cases/TCRO2' --load_snapshot --snapshot_file 'logs/train/models/snapshot-backup.reinforcement.pth'  --save_visualizations --push
+
+python main.py --is_sim --obj_mesh_dir 'objects/blocks' --num_obj 30 --grasp_rewards --experience_replay --is_testing --test_preset_cases --test_preset_file 'simulation/test-cases/TCRO3' --load_snapshot --snapshot_file 'logs/train/models/snapshot-backup.reinforcement.pth'  --save_visualizations  --push
+
+python main.py --is_sim --obj_mesh_dir 'objects/blocks' --num_obj 40 --grasp_rewards --experience_replay --is_testing --test_preset_cases --test_preset_file 'simulation/test-cases/CT7' --load_snapshot --snapshot_file 'logs/train/models/snapshot-backup.reinforcement.pth'  --save_visualizations --push
+
+python main.py --is_sim --obj_mesh_dir 'objects/blocks' --num_obj 30 --grasp_rewards --experience_replay --is_testing --test_preset_cases --test_preset_file 'simulation/test-cases/TCRO4' --load_snapshot --snapshot_file 'logs/train/models/snapshot-backup.reinforcement.pth'  --save_visualizations --push
+
+python main.py --is_sim --obj_mesh_dir 'objects/blocks' --num_obj 30 --grasp_rewards --experience_replay  --is_testing --test_preset_cases --test_preset_file 'simulation/test-cases/TCRO5' --load_snapshot --snapshot_file 'logs/train/models/snapshot-backup.reinforcement.pth'  --save_visualizations --push
+
+
+
+Evaluation
+
+#######################Well-Order 1-2 two objects, 3-5 six objects###############################################
+python evaluate.py --session_directory 'logs/TCWO1' --method 'reinforcement' --num_obj_complete 6
+python evaluate.py --session_directory 'logs/TCWO2' --method 'reinforcement' --num_obj_complete 10
+python evaluate.py --session_directory 'logs/TCWO3' --method 'reinforcement' --num_obj_complete 17
+python evaluate.py --session_directory 'logs/TCWO4' --method 'reinforcement' --num_obj_complete 11
+python evaluate.py --session_directory 'logs/TCWO5' --method 'reinforcement' --num_obj_complete 6
+python evaluate.py --session_directory 'logs/TCWO6' --method 'reinforcement' --num_obj_complete 4
+
+python evaluate.py --session_directory 'logs/train' --method 'reinforcement' --num_obj_complete 10
+
+##########################Random Order 1-2 two objects, 3-5 six objects#########################################
+
+python evaluate.py --session_directory 'logs/TCRO1' --method 'reinforcement' --num_obj_complete 20
+python evaluate.py --session_directory 'logs/TCRO2' --method 'reinforcement' --num_obj_complete 30
+python evaluate.py --session_directory 'logs/TCRO3' --method 'reinforcement' --num_obj_complete 30
+python evaluate.py --session_directory 'logs/TCRO4' --method 'reinforcement' --num_obj_complete 40
+python evaluate.py --session_directory 'logs/TCRO5' --method 'reinforcement' --num_obj_complete 14
+python evaluate.py --session_directory 'logs/TCRO6' --method 'reinforcement' --num_obj_complete 30
+
+python evaluate.py --session_directory 'logs/CT61' --method 'reinforcement' --num_obj_complete 20
+python evaluate.py --session_directory 'logs/CT6' --method 'reinforcement' --num_obj_complete 30
+python evaluate.py --session_directory 'logs/CT7' --method 'reinforcement' --num_obj_complete 40
+
+Plot
+python plot.py  'logs/2021-04-23.22:05:30' 
+python evaluate.py --session_directory 'logs/2021-04-23.22:05:30' --method 'reinforcement' --num_obj_complete 10
+
+
